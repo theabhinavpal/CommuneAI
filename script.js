@@ -99,6 +99,20 @@ document.getElementById('translateBtn').addEventListener('click', async () => {
     await detectAndTranslate(text);
 });
 
+// Add at the beginning of loadLanguages function
+const select = document.getElementById("targetLang");
+select.disabled = true;
+select.innerHTML = "<option>Loading languages...</option>";
+
+// After languages are loaded and before the end of the try block
+select.disabled = false;
+
+// Add this to your existing detectAndTranslate function, after setting innerText
+document.getElementById("result").classList.add('active');
+setTimeout(() => {
+  document.getElementById("result").classList.remove('active');
+}, 1000);
+
 async function loadLanguages() {
     const API_Key = "AIzaSyBg3xzEFkeAMff0I6JglKe9Sk6xAnBUjMo"; // Replace with your actual API Key
     const url = `https://translation.googleapis.com/language/translate/v2/languages?key=${API_Key}&target=en`;
