@@ -1,32 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spoken.ai - Futuristic Speech Translator</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Commune AI - Pocket Translation</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <section id="app">
     <div class="container">
-        <h1 class="glow-text">Commune.AI</h1>
-        <br>
-        <p class="sub-text">Cross-Lingual Speech Recognition</p>
+      <!--<h1 class="site-title">Commune.AI</h1>
+      <p class="site-tagline">Modern Translation Solution</p>-->
+      <div class="app-container">
+        <div class="app-body">
+          <div class="input-group source">
+            <label class="input-label">Speak or type your message</label>
+            <textarea id="sourceText" class="input-control" rows="4" placeholder="Click the microphone icon to start speaking or type here..."></textarea>
+            <div id="micButton" class="mic-button">
+              <img src="folder/2.png" alt="Microphone" class="mic-image">
+            </div>
+          </div>
+          
+          <div class="language-selector">
+            <label class="input-label">Translate to</label>
+            <div class="select-wrapper">
+              <select id="targetLanguage">
+                <option value="">Loading languages...</option>
+              </select>
+            </div>
+          </div>
+          
+          <div class="input-group">
+            <label class="input-label">Translation</label>
+            <textarea id="translatedText" class="input-control" rows="4" placeholder="Translation will appear here..." readonly></textarea>
+          </div>
+          
+          <div class="controls">
+            <button id="translateBtn" class="btn">
+              <i class="fas fa-language"></i> Translate
+            </button>
+            <button id="speakBtn" class="btn">
+              <i class="fas fa-volume-up"></i> Listen
+            </button>
+            <button id="copyBtn" class="btn">
+              <i class="fas fa-copy"></i> Copy
+            </button>
+            <button id="resetBtn" class="btn">
+              <i class="fas fa-sync"></i> Reset
+            </button>
+          </div>
+          <div class="loader" id="loader"></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <button id="startRecording" class="btn">Speak</button>
-        
-        <textarea id="inputText" placeholder="Your speech will appear here..." ></textarea>
-
-        <select id="targetLang"></select>
-
-
-        <button id="translateBtn" class="btn">Translate</button>
-
-        <div id="result" class="output"></div>
-        <button id="copyBtn" class="btn">Copy</button>
-        <button id="speakBtn" class="btn">Speech</button>
-
-
-
-    <script src="script.js"></script>
+  <div id="feedback">
+    <i class="fa-solid fa-exclamation"></i>
+    <span id="feedbackText">Text copied to clipboard!</span>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
