@@ -14,4 +14,3 @@ Commune AI is a cross-lingual platform that enhances communication by integratin
 🛠 Technologies Used
 
 Frontend: HTML, CSS, JavaScript
-APIs: Google Cloud, Microsoft Azure, OpenAI API (for translation and speech processing)
